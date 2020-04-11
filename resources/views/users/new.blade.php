@@ -5,14 +5,6 @@
     <h1>Create New Account</h1>
     <form action="/users" method="post" class="form">
 
-        @if($errors->any())
-            <script>
-                @foreach ($errors->all() as $error)
-                    toastr.error('{{$error}}')
-                @endforeach
-            </script>
-        @endif
-
         {{csrf_field()}}
 
         <div class="form-group">
@@ -36,7 +28,7 @@
             <button type="submit">Sign Up !</button>
         </div>
 
-        <span>Already have an account ? <a href="/login">Login</a> instead</span>
+        <span class="info-message">Already have an account ? <a href="/login">Login</a> instead</span>
     </form>
 </div>
 @endsection

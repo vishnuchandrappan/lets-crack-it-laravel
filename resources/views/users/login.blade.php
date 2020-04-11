@@ -24,7 +24,7 @@
             <button type="submit">Login !</button>
         </div>
 
-        <span>Don't have an account ? <a href="/signup">Sign Up!</a> instead</span>
+        <span class="info-message">Don't have an account ? <a href="/signup">Sign Up!</a> instead</span>
 
     </form>
 </div>

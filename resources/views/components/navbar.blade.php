@@ -14,7 +14,11 @@
                 <a href="/docs">Get Started</a>
             </span>
             <span>
-                <a href="/login">Login</a>
+                @if(Auth::check())
+                    <a href="/profile">{{Auth::user()->name}}</a>
+                @else
+                    <a href="/login">Login</a>
+                @endif
             </span>
         </div>
         <div class="burger">

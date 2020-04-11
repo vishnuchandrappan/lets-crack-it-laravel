@@ -281,6 +281,27 @@ a {
   text-decoration: none;
 }
 
+.inline {
+  display: inline;
+}
+
+.info-message {
+  position: absolute;
+  top: 8vh;
+  text-align: right;
+  display: block;
+  width: 100%;
+  left: 0;
+  padding: 0 5vw;
+}
+
+@media screen and (max-width: 768px) {
+  .info-message {
+    top: 82vh;
+    text-align: center;
+  }
+}
+
 span a {
   background-color: crimson;
   color: lavenderblush;
@@ -383,8 +404,9 @@ header nav .nav-links span {
   }
 
   header nav .nav-active {
-    height: 50vh;
-    border-bottom-left-radius: 75%;
+    height: 40vh;
+    border-bottom-right-radius: 10%;
+    border-bottom-left-radius: 10%;
   }
 
   header nav .nav-active span {

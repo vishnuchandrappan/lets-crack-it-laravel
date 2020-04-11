@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateUserRequest;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\User;
 
 class UserController extends Controller
@@ -17,8 +17,19 @@ class UserController extends Controller
     {
         $data = $request->only(['name', 'email']);
         $data['password'] = \Hash::make($request->password);
-        User::create($data);
+        $user = User::create($data);
+
+        Auth::loginUsingId($user);
 
         return redirect('/');
+    }
+
+    public function me()
+    {
+        if (!Auth::check()) {
+            return redirect("/")->withErrors(['Unauthorized ! Please Login to Continue'])->withInput();
+        }
+
+        return view('users.profile');
     }
 }

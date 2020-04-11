@@ -19289,6 +19289,13 @@ burger.addEventListener("click", function () {
   burger.classList.toggle("burger-active");
   navLinks.classList.toggle("nav-active");
 });
+var container = document.querySelector(".container");
+container.addEventListener("click", function () {
+  if (burger.classList.contains("burger-active")) {
+    burger.classList.remove("burger-active");
+    navLinks.classList.remove("nav-active");
+  }
+});
 
 /***/ }),
 

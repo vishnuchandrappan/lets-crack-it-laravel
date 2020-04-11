@@ -12,6 +12,20 @@
 <body>
     @include('components.navbar')
     <div class="container">
+
+        @if($errors->any())
+        <script>
+            @foreach($errors->all() as $error)
+            toastr.error('{{$error}}')
+            @endforeach
+        </script>
+        @endif
+
+        @if(Session::has('message'))
+        <script>
+            toastr.success('{{Session::get('message')}}')
+        </script>
+        @endif
         @yield('content')
     </div>
 
